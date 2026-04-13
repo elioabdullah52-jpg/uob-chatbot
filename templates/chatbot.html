@@ -1,34 +1,113 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>University of Bradford – Canvas Accessibility Bot</title>
-
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div>
+      <h1>University of Bradford – Canvas Accessibility Bot</h1>
+      <p>Support for reading, focus, quiz adjustments, accessibility tools, and support routes.</p>
+    </div>
 
-<header>
-  <h1>University of Bradford – Canvas Accessibility Bot</h1>
-  <p>Ask about reading help, formats, quizzes, focus, or support.</p>
+    <div class="topbar-actions">
+      <a class="top-link primary" href="https://canvas.bradford.ac.uk/" target="_blank" rel="noopener noreferrer">
+        Open Canvas
+      </a>
+      <a class="top-link" href="https://www.bradford.ac.uk/" target="_blank" rel="noopener noreferrer">
+        University Website
+      </a>
+    </div>
+  </div>
 </header>
 
-<main>
-  <div class="chat">
+<main class="container">
+  <div class="layout">
+    <section class="main-column">
+      <div class="panel hero">
+        <h2>Welcome</h2>
+        <p>
+          This chatbot gives calm, step-by-step guidance for students using Canvas.
+          It is designed to support accessibility and neurodiverse study needs.
+        </p>
 
-    <div class="chatHead">
-      <strong>Accessibility Bot</strong>
-      <button id="clearBtn">Clear</button>
-    </div>
+        <div class="hero-actions">
+          <a class="action-btn" href="https://canvas.bradford.ac.uk/" target="_blank" rel="noopener noreferrer">
+            Go to Canvas
+          </a>
+          <button class="action-btn secondary" id="focusInputBtn" type="button">
+            Ask a Question
+          </button>
+        </div>
+      </div>
 
-    <div id="chatBody" class="chatBody"></div>
+      <div class="panel chat-panel">
+        <div class="chatHead">
+          <div>
+            <strong>Accessibility Bot</strong>
+            <div class="subtext">Calm, step-by-step guidance</div>
+          </div>
+          <button class="chip" id="clearBtn" type="button">Clear Chat</button>
+        </div>
 
-    <div class="chatFoot">
-      <textarea id="msg" placeholder="Type your question..."></textarea>
-      <button id="sendBtn">Send</button>
-    </div>
+        <div class="chatBody" id="chatBody" role="log" aria-live="polite" aria-label="Conversation"></div>
 
+        <div class="chatFoot">
+          <textarea id="msg" placeholder="Type your question here..." aria-label="Type your question"></textarea>
+          <button class="send" id="sendBtn" type="button">Send</button>
+        </div>
+
+        <div class="small-note">
+          Press Enter to send. Press Shift + Enter for a new line.
+        </div>
+      </div>
+    </section>
+
+    <aside class="side-column">
+      <div class="panel">
+        <h3>Quick Questions</h3>
+        <div class="chips" id="chips">
+          <button class="chip" data-q="I struggle reading long pages in Canvas. Any tips?">Reading help</button>
+          <button class="chip" data-q="Can I get alternative formats like audio or EPUB?">Alternative formats</button>
+          <button class="chip" data-q="I need extra time in quizzes. What should I do?">Extra time</button>
+          <button class="chip" data-q="I have ADHD and lose focus on Canvas. Tips?">Focus tips</button>
+          <button class="chip" data-q="Who do I contact at University of Bradford for support?">Contact support</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Useful Links</h3>
+        <div class="link-list">
+          <a href="https://canvas.bradford.ac.uk/" target="_blank" rel="noopener noreferrer">Canvas Login</a>
+          <a href="https://www.bradford.ac.uk/" target="_blank" rel="noopener noreferrer">University of Bradford</a>
+          <a href="mailto:disability@bradford.ac.uk">Disability Support Email</a>
+          <a href="mailto:studentsupport@bradford.ac.uk">Student Support Email</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>What I Can Help With</h3>
+        <ul class="info-list">
+          <li>Reading support and reducing overload</li>
+          <li>Alternative formats and accessibility tools</li>
+          <li>Quiz support and extra time guidance</li>
+          <li>Focus, planning, and study tips</li>
+          <li>Where to ask for official support</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h3>Important Note</h3>
+        <p class="muted">
+          This chatbot gives general support guidance. It does not access your personal Canvas account,
+          grades, submissions, or university records.
+        </p>
+      </div>
+    </aside>
   </div>
 </main>
 
