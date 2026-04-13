@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>University of Bradford – Canvas Accessibility Bot</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+  <h1>University of Bradford – Canvas Accessibility Bot</h1>
+  <p>Ask about reading help, formats, quizzes, focus, or support.</p>
+</header>
+
+<main>
+  <div class="chat">
+
+    <div class="chatHead">
+      <strong>Accessibility Bot</strong>
+      <button id="clearBtn">Clear</button>
+    </div>
+
+    <div id="chatBody" class="chatBody"></div>
+
+    <div class="chatFoot">
+      <textarea id="msg" placeholder="Type your question..."></textarea>
+      <button id="sendBtn">Send</button>
+    </div>
+
+  </div>
+</main>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
